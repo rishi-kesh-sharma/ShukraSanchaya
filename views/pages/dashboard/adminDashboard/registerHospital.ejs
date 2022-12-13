@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Register Hospital</title>
+
+        <!-- google fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Nabla&family=Roboto+Mono:ital,wght@0,100;0,400;1,100&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+        <!-- Boxicons CDN Link -->
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+        
+        <!-- font awesome cdn -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+        <!-- font awesome kit -->
+        <script src="https://kit.fontawesome.com/7fb2d5bac5.js" crossorigin="anonymous"></script>
+
+        <!-- axios cdn -->
+        <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+
+        
+        <!--admin dashboard css  -->
+        <link rel="stylesheet" href="/css/dashboard/adminDashboard/adminDashboard.css"/>
+        <!-- admin dashboard js -->
+        <script src="/js/dashboard/adminDashboard/adminDashboard.js" defer></script>
+
+        <!-- all appointments css -->
+        <link rel="stylesheet" href="/css/dashboard/adminDashboard/registerHospital.css"/>
+        <!-- all appointment js -->
+        <script src="/js/dashboard/adminDashboard/registerHospital.js" defer></script>
+
+    </head>
+        <body>
+            
+        <!-- side bar partial -->
+        <%-include("../../../partials/dashboard/adminDashboard/navigationBars/sidebar.ejs")%>
+        <section class="home-section">
+
+        <!-- top bar partial -->
+        <%-include("../../../partials/dashboard/adminDashboard/navigationBars/topbar.ejs")%>
+
+        <!-- all user partial -->
+        <%-include("../../../partials/dashboard/adminDashboard/mainContent/registerHospital.ejs")%>
+
+        </body>
+</html>

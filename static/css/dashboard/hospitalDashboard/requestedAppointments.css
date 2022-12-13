@@ -1,0 +1,39 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+td>i{
+  cursor:pointer;
+}
+td{
+  cursor: pointer;
+}
+
+button.accept-btn,button.reject-btn{
+  padding: 10px 20px ;
+  cursor: pointer;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+button.accept-btn{
+  background-color: rgb(4, 149, 4);
+}
+button.reject-btn{
+  background-color: red;
+}

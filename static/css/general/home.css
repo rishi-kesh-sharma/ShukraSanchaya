@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /* height: auto; */
+    min-width: 100%;
+    position: relative;
+    background: url("/assets/images/home-background.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+   min-height: 100vh;
+    overflow-x: hidden;
+    /* padding-bottom: 15rem; */
+}
+
+body::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    /* right: -3em; */
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgb(8, 8, 9);
+    opacity: 0.5;
+    z-index: -1;
+    min-height: 100vh;
+}
+
+
+.main-section .text-center , .main-section .heading-text-center{
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    margin: 70px auto ;
+    max-width: 620px;
+    text-align: center;
+}
+.main-section .text-center{
+   min-height: 100px;
+}
+.main-section .heading-text-center{
+    font-size: 2.5em;
+    background:linear-gradient(to right,rgb(2, 163, 244),yellow,rgb(7, 255, 44));
+    background-clip: text;
+-webkit-background-clip: text;
+color: transparent;
+
+}
+div.btn-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  .btn{
+      font-family: 'Roboto Mono', monospace;
+      display: flex;
+      max-width: 400px;
+      min-width: 200px;
+      padding: 10px;
+      /* position: absolute; */
+      /*z-index: 20;
+    */background-color: rgb(9, 9, 117);
+    border: none;
+    margin: 50px;
+    padding: 10px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border-radius: 20px;
+    bottom: 3rem;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+
+.donor-registration-btn{
+    /* margin: auto; */
+    
+}
+.make-appointment-btn {
+    /* right: 50%; */
+}
+ .btn a{
+    text-align: center;
+    padding: auto;
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+}
+.btn:hover{
+    
+    background-color: rgb(193, 186, 186);
+}
+.btn:hover a{
+  color:  rgb(9, 9, 117);
+}
+
+
+/* responsiveness */
+
+@media screen and (max-width:768px) {
+    .main-section  h3.heading-text-center{
+        font-size: 2rem;
+        margin: 2rem auto;
+    }
+    .main-section p.text-center{
+        margin: 0 auto;
+    }
+    .btn-container{
+        flex-direction: column;
+        align-content:flex-start;
+        align-items: center;
+    }
+    .btn a{
+        font-size: 1.3rem;
+        /* padding: 10px; */
+    }
+    .btn{
+        margin: 20px 0;
+    }
+    
+    .donor-registration-btn>.btn>a{
+        font-size: 1.3rem;
+    }
+   
+}

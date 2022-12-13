@@ -1,0 +1,45 @@
+
+<header class="header" id=<%= id %>>
+    <a href="#">
+    <div class="logo">
+        <img src="/assets/images/logo.png" alt="logo">
+    </div>
+    </a>
+    <ul class="nav-links">
+        <li class="nav-link" id=""><a href="/">Home</a></li>
+        <li class="nav-link" id="about"><a href="/about">About</a></li>
+        <%if( !user.role.includes("admin")){%>
+            <li class="nav-link" id="contact"><a href="/contact">Contact</a></li>
+            <%}%>
+        <li id="my-account-nav-link" class="nav-link dropdown"><a href="#">My Account</a>
+            <ul>
+                <li id="profile" class="nav-link dropdown-item"><a href="/profile"> Profile</a></li>
+                
+                <% 
+
+                  let endpoint="";
+                  if(user.role.includes("admin")){
+                    endpoint="admin"
+                  }else if(user.role.includes("hospital")){
+                    endpoint="hospital"
+                  }else if(user.role.includes("donor")){
+                    endpoint="donor"
+                  }else{
+                    endpoint="client"
+                  }
+
+                 %>
+
+                <li id="dashboard" class="nav-link dropdown-item"><a href="dashboard/<%= endpoint %>">Dashboard</a></li>
+                <li id="logout" class="nav-link dropdown-item"> <a href="/action/logout">Logout</a></li>
+            </ul><i class="fa fa-caret-down" aria-hidden="true"></i>
+        </li>
+        <button class="hide-sidebar-btn"><i class="fa-solid fa-xmark"></i></button>
+    </ul>
+    <div class="hamburger">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <!-- axios link -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</header>
+       

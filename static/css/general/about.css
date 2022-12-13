@@ -1,0 +1,126 @@
+body{
+    background-color: #eaecec;
+    height: auto;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.heading-text{
+    text-align: center;
+    position: relative;
+    width: 200px;
+    margin:3rem auto;
+}
+.main-container{
+    padding: 1rem;
+    padding-bottom: 10em;
+}
+.special-text{
+    color: rgb(26, 98, 241);
+}
+
+.heading-text::after{
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  background-color: blue;
+  width: 100%;
+  height: 3px;
+}
+.main-container .top-container{
+    max-width: 60rem;
+    margin:0 auto 3rem ;
+
+}
+.main-container .top-container p{
+    text-align: justify;
+}
+.main-container .top-container p:nth-child(even){
+    margin: 1rem 0;
+    font-weight: bold;
+}
+.card-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin:50px 0px;
+    padding: 20px;
+    box-shadow: 10px 20px 20px rgb(158, 146, 146);
+    background-color: white;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+.card>div{
+    margin: 15px;
+}
+
+p.info-displayer{
+    font-weight: 500;
+    font-size: 1.6em;
+}
+.icons{
+margin:0 10px;
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+justify-content:space-evenly;
+}
+.icons>div{
+     font-size: 1.1em;
+     margin: 10px 20px;
+     font-weight: 600;
+     transition: transform 0.2s linear;
+     cursor: pointer;
+     /*font-family: sans-serif;
+     */-webkit-transition: transform 0.2s linear;
+     -moz-transition: transform 0.2s linear;
+     -ms-transition: transform 0.2s linear;
+     -o-transition: transform 0.2s linear;
+     -webkit-transition: transform 0.2s linear;
+}
+.icons .icon span{
+    font-weight: 400;
+    font-family: 'Ubuntu', sans-serif;
+     
+}
+.icons>div:hover{
+    color: blue;
+    transform: scale(1.2);
+   
+}
+.card-image-container{
+    width: 150px;
+    height: 150px; 
+}
+.card-image-container img{
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.mid-container{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

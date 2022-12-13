@@ -1,0 +1,37 @@
+<div class="sidebar">
+    <div class="logo-details">
+       <span class="logo_name">ShukraSanchaya</span>
+    </div>
+    <ul class="nav-links">
+        <li>
+        <a href="/dashboard/hospital/" >
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">overview</span>
+        </a>
+        </li>
+        <li>
+        <a href="/dashboard/hospital/appointments/<%= user._id %>/all" >
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Requested Appointments</span>
+        </a>
+        </li>
+        <li>
+        <a href="/dashboard/hospital/appointments/accepted/<%= user._id %>/all" >
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Accepted Appointments</span>
+        </a>
+        </li>
+        <li>
+        <a href="/dashboard/hospital/appointments/rejected/<%= user._id %>/all" >
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Rejected Appointments</span>
+        </a>
+        </li>
+        <li class="log_out">
+        <a href="/action/logout" >
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+        </a>
+        </li>
+    </ul>
+</div>    

@@ -1,0 +1,30 @@
+
+<div style="overflow-x: auto;padding-top: 80px;">
+    <table>
+        <tr>
+          <th>S.N</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Address</th>
+          <th>Role</th>
+          <th>Edit</th>
+          <th>Remove</th>
+        </tr>
+          
+        
+        <% users.forEach((item,index) => {%>
+          <tr>
+           <% const {_id,name,email,phone,address,role}=item; %>
+           <td  contenteditable="false"><%=skip+index+1%></td>
+           <td class="user-data" contenteditable="true"><%=name%></td>
+           <td class="user-data" contenteditable="true"><%=email%></td>
+           <td class="user-data" contenteditable="true"><%=phone%></td>
+           <td class="user-data" contenteditable="true"><%=address%></td>
+           <td class="user-data" contenteditable="false"><%=role%></td>
+           <td><i class="fa-solid fa-pen-to-square edit-btn" id=<%=_id%> ></i></td>
+           <td><i class="fa fa-trash remove-btn" aria-hidden="true" id=<%=_id%> ></i></td>
+          </tr>
+         <% })%>
+      </table>
+  </div>

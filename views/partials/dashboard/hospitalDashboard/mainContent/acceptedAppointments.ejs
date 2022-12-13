@@ -1,0 +1,33 @@
+
+<div style="overflow-x: auto;padding-top: 80px;">
+    <table>
+        <tr>
+          <th>S.N</th>
+          <th>Status</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Appointment Date</th>
+          <th>Appointment As</th>
+          <th>Created At</th>
+          <th>Mail</th>
+        </tr>
+          
+        
+        <% appointments.forEach((appointment,index) => {%>
+          <tr>
+              <% let {_id,name,email,phone,appointmentFor,appointmentDate,appointmentAs,status,createdAt}=appointment;%>
+              
+           <td  contenteditable="false"><%=index+1 %></td>
+           <td class="appointment-data" contenteditable="false"><%= status %></td>
+           <td class="appointment-data" contenteditable="false"><%= name %></td>
+           <td class="appointment-data" contenteditable="false"><%= email %></td>
+           <td class="appointment-data" contenteditable="false"><%= phone %></td>
+           <td class="appointment-data" contenteditable="false"><%= moment(appointmentDate).format("LLLL") %></td>
+           <td class="appointment-data" contenteditable="false"><%= appointmentAs %></td>
+           <td class="appointment-data" contenteditable="false"><%= moment(createdAt).format("LLLL") %></td>
+           <td  contenteditable="false"><a href="mailto:<%= email %>"><i class="fa fa-envelope" aria-hidden="true"></i></a></td>
+          </tr>
+         <% })%>
+      </table>
+  </div>

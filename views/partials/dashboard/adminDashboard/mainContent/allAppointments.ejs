@@ -1,0 +1,46 @@
+
+<div style="overflow-x: auto;padding-top: 80px;">
+    <table>
+        <tr>
+          <th>S.N</th>
+          <th>Status</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Appointment For</th>
+          <th>Appointment Date</th>
+          <th>Appointment As</th>
+          <th>CreatorName</th>
+          <th>CreatorEmail</th>
+          <th>Creator Phone</th>
+          <th>Creator Role</th>
+          <th>Created At</th>
+          <th>Edit</th>
+          <th>Remove</th>
+        </tr>
+          
+        
+        <% appointments.forEach((appointment,index) => {%>
+          <tr>
+              <% let {_id,name,email,phone,appointmentFor,appointmentDate,appointmentAs,status,createdAt,createdBy}=appointment;%>
+              
+           <td  contenteditable="false"><%= skip+index+1 %></td>
+           <td class="appointment-data" contenteditable="false"><%= status %></td>
+           <td class="appointment-data" contenteditable="true"><%= name %></td>
+           <td class="appointment-data" contenteditable="true"><%= email %></td>
+           <td class="appointment-data" contenteditable="true"><%= phone %></td>
+           <td class="appointment-data" contenteditable="false" id="<% appointmentFor._id %>"><%= appointmentFor.name %></td>
+           <td class="appointment-data" contenteditable="true"><%= moment(appointmentDate).format("LLLL") %></td>
+           <td class="appointment-data" contenteditable="true"><%= appointmentAs %></td>
+           <td class="appointment-data" contenteditable="true"><%= createdBy.name %></td>
+           <td class="appointment-data" contenteditable="true"><%= createdBy.email %></td>
+           <td class="appointment-data" contenteditable="true"><%= createdBy.phone %></td>
+           <td class="appointment-data" contenteditable="false"><%= createdBy.role %></td>
+           <td class="appointment-data" contenteditable="true"><%= moment(createdAt).format("LLLL") %></td>
+           <td><i class="fa-solid fa-pen-to-square edit-btn" id=<%=_id%> ></i></td>
+           <td><i class="fa fa-trash remove-btn" aria-hidden="true" id=<%=_id%> ></i></td>
+          </tr>
+         <% })%>
+      
+      </table>
+  </div>

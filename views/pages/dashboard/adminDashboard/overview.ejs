@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!-- google fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Nabla&family=Roboto+Mono:ital,wght@0,100;0,400;1,100&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+    <!-- Boxicons CDN Link -->
+        <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+        <!-- admin dashboard css -->
+        <link rel="stylesheet" href="/css/dashboard/adminDashboard/adminDashboard.css">
+
+        <!-- admin overview css -->
+        <link rel="stylesheet" href="/css/dashboard/adminDashboard/overview.css">
+
+        <!-- admin dashboard js -->
+        <script src="/js/dashboard/adminDashboard/adminDashboard.js" defer></script>
+
+        <!-- admin overview js -->
+        <script src="/js/dashboard/adminDashboard/overview.js" defer></script>
+
+   </head>
+    <body>
+
+        <!-- side bar partial -->
+        <%-include("../../../partials/dashboard/adminDashboard/navigationBars/sidebar.ejs")%>
+        <section class="home-section">
+
+            <!-- top bar partial -->
+            <%-include("../../../partials/dashboard/adminDashboard/navigationBars/topbar.ejs")%>
+
+            <!-- overview partial -->
+            <%-include("../../../partials/dashboard/adminDashboard/mainContent/overview.ejs")%>
+            
+        </section>
+    </body>
+</html>
+

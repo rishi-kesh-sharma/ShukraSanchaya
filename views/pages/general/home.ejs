@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+                <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Nabla&family=Roboto+Mono:ital,wght@0,100;0,400;1,100&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+
+        <!-- font awesome cdn -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+         <!-- navbar css -->
+        <link rel="stylesheet" type="text/css" href="/css/general/navbar.css"/>
+        <!-- navbar js -->
+        <script src="/js/general/navbar.js" defer ></script>
+
+        <!-- home js -->
+        <script src="/js/general/home.js" defer></script>
+        <!-- home css -->
+        <link rel="stylesheet" type="text/css" href="/css/general/home.css"/>
+        
+
+        <title>home</title>
+    </head>
+    <body>
+        <!-- include navbar -->
+            <%-include("../../partials/general/navbar.ejs")%>
+            <section class="main-section">
+                <h3 class="heading-text-center">Welcome To ShukraSanchaya</h3>
+
+                <p class="text-center"></p>
+
+                <div class="btn-container">
+                    <% if(!user.role.includes("donor") && !user.role.includes("admin") && ! user.role.includes("hospital")){ %>
+                        <div class="donor-registration-btn btn" ><a href="/donor/register">Register As Donor</a> </div>
+                        <%} %>
+                    <% if( !user.role.includes("admin")  &&  ! user.role.includes("hospital")) { %>
+                        <div class="make-appointment-btn btn" ><a href="/appointment">Make Appointment</a> </div>
+                        <% } %>
+                </div>
+            </section>
+
+            <!-- <audio id="audio" src="/assets/audio/typing_sound.mp3" autoplay="autoplay"></audio>  -->
+        <!-- <h1>welcome to home page</h1> -->
+    </body>
+</html>

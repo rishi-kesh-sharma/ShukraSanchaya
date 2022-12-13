@@ -1,0 +1,11 @@
+
+<form class="delete-form" action="/dashboard/donor/action/donorAccount/<%= user._id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE" />
+    <div class="confirm-message">
+       <p>Are you sure you want to delete yourself from donor?</p>
+    </div>
+    <div class="btns">
+       <button class="yes-btn" type="submit">Yes</button>
+       <button class="no-btn" >  <a href="/dashboard/donor/">No</a></button>
+    </div>
+ </form>

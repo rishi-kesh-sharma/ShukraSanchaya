@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profile Page</title>
+
+                <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Nabla&family=Roboto+Mono:ital,wght@0,100;0,400;1,100&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+
+        <!-- FontAwesome 5 -->
+        <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+        
+        <!-- font awesome cdn -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        <!-- navabar css -->
+        <link rel="stylesheet" type="text/css" href="/css/general/navbar.css"/>
+        <!-- navbar js -->
+        <script src="/js/general/navbar.js" defer ></script>
+
+        <!-- profile css -->
+        <link rel="stylesheet" href="/css/general/profile.css">
+        <!-- profile js -->
+        <script src="/js/general/profile.js" defer></script>
+
+    </head>
+    <body>
+
+        <!-- Navbar -->
+        <%-include("../../partials/general/navbar.ejs")%>
+
+
+            <div class="title">
+                <h1>Welcome 
+                  <span>  <%=user.name%></span>
+                To Your Profile</h1>
+            </div>
+            <!-- End -->
+
+        <!-- Nav -->
+        
+        <div class="main-container">
+            <div class="nav">
+                <div class="profile">
+                    <img src="/assets/images/dummy-photo.png" alt="" width="150px" height="150px">
+        
+                    <div class="name">
+                    <%=user.name%>
+                    </div>
+                </div>
+        
+                <div class="nav-btns">
+                    <div class="nav-btn active" id="profile-nav-btn">
+                        <p>Profile</p>
+                        <hr align="center">
+                    </div>
+                    <div class="nav-btn" id="edit-profile-nav-btn">
+                        <p>Edit Profile</p>
+                        <hr align="center">
+                    </div>
+                    <div class="nav-btn" id="change-password-nav-btn">
+                        <p>Change Password</p>
+                        <hr align="center">
+                    </div>
+                </div>
+            </div>
+            <!-- End -->
+        
+            <!-- Main -->
+            <div class="main">
+        
+                <!-- profile card -->
+        
+                <div class="profile-card active">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Name</td>
+                                <td>:</td>
+                                <td><%=user.name%></td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>:</td>
+                                <td><%=user.email%></td>
+                            </tr>
+                            <tr>
+                                <td>Phone</td>
+                                <td>:</td>
+                                <td><%=user.phone%></td>
+                            </tr>
+                            <tr>
+                                <td>Address</td>
+                                <td>:</td>
+                                <td><%=user.address%></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <!-- edit profile card -->
+                <div class="edit-profile-card">
+                    <form  style="max-width:500px;margin:auto" method="POST" action="/action/profile/<%= user._id %>">
+                        <input   type="hidden" name="_method" value="PUT" />
+
+                        <div class="input-container">
+                            <i class="fa fa-user icon"></i>
+                            <input value=<%=user.name%>  class="input-field" type="text" placeholder="Fullname" name="name" id="name" />
+                        </div>
+                
+                        <div class="input-container">
+                            <i class="fa fa-envelope icon"></i>
+                            <input value=<%=user.email%> class="input-field" type="email" placeholder="Email" name="email" id="email">
+                        </div>
+                        <div class="input-container">
+                            <i class="fa fa-phone icon"></i>
+                            <input value=<%=user.phone%> class="input-field" type="number" placeholder="Phone" name="phone" id="phone">
+                        </div>
+                        <div class="input-container">
+                            <i class="fa fa-user icon"></i>
+                            <input value=<%=user.address%> class="input-field" type="text" placeholder="Address" name="address" id="address">
+                        </div>
+                
+                        <button type="submit" class="btn" id="save-profile-btn">Save Profile</button>
+                        </form>
+                </div>
+
+                <!-- change password card -->
+                <div class="change-password-card">
+                    <form  style="max-width:500px;margin:auto" method="POST" action="/action/profile/password/me">
+                        <input   type="hidden" name="_method" value="PUT" />
+
+                        <div class="input-container">
+                            <i class="fa fa-key icon"></i>
+                            <input id="old-password" class="input-field" type="password" placeholder="Old Password" name="oldPassword">
+                        </div>
+                        <div class="input-container">
+                            <i class="fa fa-key icon"></i>
+                            <input id="new-password" class="input-field" type="password" placeholder=" New Password" name="newPassword">
+                        </div>
+                        <div class="input-container">
+                            <i class="fa fa-key icon"></i>
+                            <input id="confirm-password" class="input-field" type="password" placeholder="Confirm Password" name="confirmPassword">
+                        </div>
+                        <button type="submit" class="btn" id="change-password-btn">Change Password</button>
+                        </form>
+                </div>
+        
+            </div>
+        </div>
+    </body>
+</html>

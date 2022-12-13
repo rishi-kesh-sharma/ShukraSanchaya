@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Register User</title>
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Nabla&family=Roboto+Mono:ital,wght@0,100;0,400;1,100&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+        <!-- font awesome cdn -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+        <!-- font awesome kit -->
+        <script src="https://kit.fontawesome.com/7fb2d5bac5.js" crossorigin="anonymous"></script>
+
+        <!-- axios cdn -->
+        <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+
+        <!-- register js -->
+        <!-- <script src="/js/general/register.js" defer></script> -->
+        <!-- register css -->
+        <link rel="stylesheet" href="/css/general/register.css">
+        
+    </head>
+        <body>
+            <form  style="max-width:500px;margin:auto" method="POST" action="/action/register">
+                <h2 class="heading">Register Form</h2>
+                <div class="input-container">
+                    <i class="fa fa-user icon"></i>
+                    <input  class="input-field" type="text" placeholder="Fullname" name="name" id="name" required />
+                </div>
+
+                <div class="input-container">
+                    <i class="fa fa-envelope icon"></i>
+                    <input class="input-field" type="email" placeholder="Email" name="email" id="email" required/>
+                </div>
+                <div class="input-container">
+                    <i class="fa fa-phone icon"></i>
+                    <input class="input-field" type="number" placeholder="Phone" name="phone" id="phone" required/>
+                </div>
+                <div class="input-container">
+                    <i class="fa fa-user icon"></i>
+                    <input class="input-field" type="text" placeholder="Address" name="address" id="address" required/>
+                </div>
+                
+                <div class="input-container">
+                    <i class="fa fa-key icon"></i>
+                    <input class="input-field" type="password" placeholder="Password" name="password" id="password" required/>
+                </div>
+                <div class="input-container">
+                    <i class="fa fa-key icon"></i>
+                    <input class="input-field" type="password" placeholder="Confirm Password" name="confirmPassword" id="confirm-password" required/>
+                </div>
+
+                <button type="submit" class="btn" id="register-btn">Register</button>
+                <a class="login-link" href="/login">Already has An Account?</a>
+            </form>
+        </body>
+</html>

@@ -1,0 +1,84 @@
+<html lang="en">
+  <head>
+    <title>Appointment Form</title>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Nabla&family=Roboto+Mono:ital,wght@0,100;0,400;1,100&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- navbar css -->
+    <link rel="stylesheet" type="text/css" href="/css/general/navbar.css"/>
+    <!-- navbar js -->
+    <script src="/js/general/navbar.js" defer ></script>
+
+    <!-- appointment css -->
+    <link rel="stylesheet" type="text/css" href="/css/general/appointment.css" />
+    <!-- appointment js -->
+    <!-- <script src="/js/general/appointment.js" defer ></script> -->
+
+    <!-- axios cdn link-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <%-include("../../partials/general/navbar.ejs")%>
+
+    <!-- appointment body -->
+
+    <div id="container">
+      <div id="body_header">
+        <h1>Appointment Request Form</h1>
+        <p>Get Appointment From Hospital/Clinic</p>
+
+      </div>
+      <form method="POST" action="/action/appointment">
+        <fieldset>
+          <legend><span class="number">1</span>Your basic details</legend>
+          <label for="name">Name*:</label>
+          <input class="input-field" type="text" id="name" name="name" placeholder="rishikesh sharma" required pattern="[a-zA-Z0-9]+" value=<%=user.name%> />
+
+          <label for="mail">Email*:</label>
+          <input class="input-field" type="email" id="mail" name="email" placeholder="abc@xyz.com" required value=<%=user.email%> />
+
+          <label for="phone">Contact Num*:</label>
+          <input class="input-field" type="tel" id="phone" placeholder="9876543210" name="phone" required value=<%=user.phone%>  />
+        </fieldset>
+        <fieldset>
+          <legend><span class="number">2</span>Appointment Details</legend>
+          <label for="appointmentAs">Appointment as*:</label>
+          <select class="input-field" id="appointment-as" name="appointmentAs" required>
+           
+            <% if(user.role.includes("donor")){ %>
+              <option value="donor">donor</option>
+              <option value="client">client</option>
+              
+            <% } else { %>
+              <option value="client">client</option>
+              <% } %>
+              
+          </select>
+          <label for="appointmentFor">Appointment for*:</label>
+          <select class="input-field" id="appointment-for" name="appointmentFor" required>
+            <% hospitals.forEach((hospital)=>{ %>
+               <% const {_id,name}=hospital %>
+               
+               <option value=<%= _id %> id=<%= _id %> > <%= name %></option>
+
+            <%  }) %>
+          </select>
+          <label for="date">Date*:</label>
+          <input class="input-field" type="date" name="appointmentDate" required id="date"  />
+          <label for="message">Appointment Description*:</label>
+          <textarea class="input-field" id="message" name="message" placeholder="anything about the appointment"></textarea>
+          <br>
+        <button type="submit"  id="appointment-request-btn">Request For Appointment</button>
+      </form>
+    </div>
+  </body>
+</html>

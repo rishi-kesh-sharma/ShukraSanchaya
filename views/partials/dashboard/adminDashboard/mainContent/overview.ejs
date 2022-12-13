@@ -1,0 +1,32 @@
+<div class="card-container">
+
+  <% const {totalUsers,totalAppointments,totalDonors,totalHospitals,totalPendingAppointments,totalRejectedAppointments,totalSuccessfulAppointments}=overview%>
+    <div class="card">
+        <h1>Total Users</h1>
+        <h3><%= totalUsers %></h3>
+      </div>
+    <div class="card">
+        <h1>Total Donors</h1>
+        <h3><%= totalDonors %></h3>
+      </div>
+    <div class="card">
+        <h1>Total Hospitals</h1>
+        <h3><%= totalHospitals %></p>
+      </div>
+    <div class="card">
+        <h1>Total Appointments</h1>
+        <h3><%= totalAppointments %></p>
+      </div>
+    <div class="card">
+        <h1>Total Pending Appointments</h1>
+        <h3><%= totalPendingAppointments %></p>
+      </div>
+    <div class="card">
+        <h1>Total Successful Appointments</h1>
+        <h3><%= totalSuccessfulAppointments%></p>
+      </div>
+    <div class="card">
+        <h1>Total Rejected Appointments</h1>
+        <h3><%= totalRejectedAppointments %></p>
+      </div>
+</div>

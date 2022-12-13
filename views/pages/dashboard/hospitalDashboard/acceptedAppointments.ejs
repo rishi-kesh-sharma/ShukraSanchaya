@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <!-- google fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Nabla&family=Roboto+Mono:ital,wght@0,100;0,400;1,100&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+        <!-- Boxicons CDN Link -->
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+        <!-- font awesone cdn -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!-- axios link -->
+        <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+
+        <!--admin dashboard css  -->
+        <link rel="stylesheet" href="/css/dashboard/hospitalDashboard/hospitalDashboard.css"/>
+        <!-- admin dashboard js -->
+        <script src="/js/dashboard/hospitalDashboard/hospitalDashboard.js" defer></script>
+
+        <!-- all appointments css -->
+        <link rel="stylesheet" href="/css/dashboard/hospitalDashboard/acceptedAppointments.css"/>
+        <!-- all appointment js -->
+        <script src="/js/dashboard/hospitalDashboard/acceptedAppointments.js" defer></script>
+
+    </head>
+    <body>
+        <!-- side bar partial -->
+        <%-include("../../../partials/dashboard/hospitalDashboard/navigationBars/sidebar.ejs")%>
+        <section class="home-section">
+
+        <!-- top bar partial -->
+        <%-include("../../../partials/dashboard/hospitalDashboard/navigationBars/topbar.ejs")%>
+
+        <!-- my appointments partial -->
+        <%-include("../../../partials/dashboard/hospitalDashboard/mainContent/acceptedAppointments.ejs")%>
+
+        </section>
+    </body>
+</html>
+

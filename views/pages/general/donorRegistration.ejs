@@ -1,0 +1,142 @@
+<html lang="en">
+  <head>
+    <title>Register As Donor</title>
+
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Nabla&family=Roboto+Mono:ital,wght@0,100;0,400;1,100&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    
+
+    <!-- font awesome cdn -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- navbar css -->
+    <link rel="stylesheet" type="text/css" href="/css/general/navbar.css"/>
+    <!-- navbar js -->
+    <script src="/js/general/navbar.js" defer ></script>
+
+    <!-- donor registration css -->
+    <link rel="stylesheet" type="text/css" href="/css/general/donorRegistration.css" />
+    <!-- donor registration js -->
+    <!-- <script src="/js/general/donorRegistration.js" defer></script> -->
+    
+  </head>
+
+  <body>
+
+      <!-- navigation bar -->
+
+      <%-include("../../partials/general/navbar.ejs")%>
+
+      <!-- donor registration main content -->
+    <div id="container">
+      <div id="body_header">
+        <h1>Donor Registration Form</h1>
+        <p>Get Registered to Become a Donor</p>
+
+      </div>
+      <form method="POST" action="/action/donor/register">
+        <fieldset>
+          <legend><span class="number">1</span>Your basic details</legend>
+          <label for="DOB">Date*:</label>
+          <input class="input-field" type="date" name="DOB" value="" required />
+
+          <label for="age">Age*:</label>
+          <input class="input-field" type="number" id="age" name="age" placeholder="30" required />
+
+          <label for="noOfSiblings">No Of Siblings*:</label>
+          <input class="input-field" type="number" id="siblings" name="noOfSiblings" placeholder="3" required />
+
+
+          <label for="isMarried">Are You Married*:</label>
+
+          <input class="input-field" type="radio" checked id="yes"  name="isMarried" value="true" />
+          <label for="yes">Yes</label>
+
+          <input class="input-field" type="radio" checked id="no"  name="isMarried" value="false" />
+          <label for="no">No</label>
+
+
+          <label for="isHealthyMale">Are You A Healthy Male*:</label>
+
+          <input class="input-field" type="radio" checked id="yes"  name="isHealthyMale" value="true" />
+          <label for="yes">Yes</label>
+
+          <input class="input-field" type="radio" checked id="no"  name="isHealthyMale" value="false" />
+          <label for="no">No</label>
+
+        <fieldset>
+
+          <legend><span class="number">2</span>Secondary Details</legend>
+
+          <label for="hasDonatedBefore">Have You Donated Before*:</label>
+
+          <input class="input-field" type="radio" checked id="yes"  name="hasDonatedBefore" value="true"  required/>
+          <label for="yes">Yes</label>
+
+          <input class="input-field" type="radio" checked id="no"  name="hasDonatedBefore" value="false" required />
+          <label for="no">No</label>
+          
+          
+          <label for="hasChronicDisease">Are You Infected By  Any Chronic Disease?*:</label>
+
+          <input class="input-field" type="radio" checked id="yes"  name="hasChronicDisease" value="true"  required />
+          <label for="yes">Yes</label>
+
+          <input class="input-field" type="radio" checked id="no"  name="hasChronicDisease" value="false"  required />
+          <label for="no">No</label>
+          
+          
+          <label for="hasSTDs">Are You Infected By  Any STD's*:</label>
+
+          <input class="input-field" type="radio" checked id="yes"  name="hasSTDs" value="true">
+          <label for="yes">Yes</label>
+
+          <input class="input-field" type="radio" checked id="no"  name="hasSTDs" value="false">
+          <label for="no">No</label>
+
+          <label for=educationalQualification>Educational Qualification *:</label>
+          <select class="input-field" id=educationalQualification name=educationalQualification required>
+            <option value="completed a professional certificate post high school diploma">completed a professional certificate post high school diploma</option>
+            <option value="completed course in a 2 or 4 year program">completed course in a 2 or 4 year program</option>
+            <option value="completed AA program">completed AA program</option>
+            <option value="completed BA/BS">completed BA/BS</option>
+            <option value="completed bachelor degree">completed bachelor degree</option>
+            <option value="completed masters degree">completed masters degree</option>
+          </select>
+
+          
+          <label for="howCameInContact">How Did You Know About Us? *:</label>
+          <select class="input-field" id="howCameInContact" name="howCameInContact" required>
+            <option value="social media">social media</option>
+            <option value="someone's recommendation">someone's recommendation</option>
+            <option value="peers">peers</option>
+            <option value="google">google</option>
+            <option value="newspaper">newspaper</option>
+            <option value="event">event</option>
+            <option value="website">website</option>
+            <option value="other">other</option>
+          </select>
+          
+
+
+          <label for="race">Which race do you belong to? *:</label>
+          <select class="input-field" id="race" name="race" required>
+            <option value="asian">asian</option>
+            <option value="caucasian">caucasian</option>
+            <option value="mongolian">mongolian</option>
+            <option value="latino">latino</option>
+            <option value="negro">negro</option>
+            <option value="multi">multi</option>
+          </select>
+
+          <label for="description">Personal Description:</label>
+          <textarea class="input-field" id="description" name="description" placeholder="anything about the yourself" required></textarea>
+          
+        <input class="register-donor-btn" type="submit"/>
+      </form>
+    </div>
+  </body>
+
+</html>

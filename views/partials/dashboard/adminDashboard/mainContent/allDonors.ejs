@@ -1,0 +1,30 @@
+
+<div style="overflow-x: auto;padding-top: 80px;">
+    <table>
+      <tr>
+          <th>S.N</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Address</th>
+          <th>Edit</th>
+          <th>Remove</th>
+        </tr>
+          
+        
+        <% donors.forEach((donor,index) => {%>
+          <tr>
+            <%const {_id,name,email,phone,address}=donor;%>
+            <td  contenteditable="false"><%= skip+index+1 %></td>
+            <td class="donor-data" contenteditable="true"><%=name%></td>
+           <td class="donor-data" contenteditable="true"><%=email%></td>
+           <td class="donor-data" contenteditable="true"><%=phone%></td>
+           <td class="donor-data" contenteditable="true"><%=address%></td>
+           <td><i class="fa-solid fa-pen-to-square edit-btn" id=<%=_id%> ></i></td>
+           <td><i class="fa fa-trash remove-btn" aria-hidden="true" id=<%=_id%> ></i></td>
+          </tr>
+         <% })%>
+      
+      </table>
+      
+  </div>

@@ -1,0 +1,29 @@
+
+<div style="overflow-x: auto;padding-top: 80px;">
+    <table>
+        <tr>
+          <th>S.N</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Country</th>
+          <th>Description</th>
+          <th>Respond</th>
+          <th>Remove</th>
+        </tr>
+          
+        
+        <% contacts.forEach((contact,index) => { %>
+          <tr>
+           <% const {_id,name,email,country,description}=contact ; %>
+           <td  contenteditable="true"><%= skip+index+1 %></td>
+           <td class="contact-data" contenteditable="true"><%= name %></td>
+           <td class="contact-data" contenteditable="true"><%= email %></td>
+           <td class="contact-data" contenteditable="true"><%= country %></td>
+           <td class="contact-data" contenteditable="true"><%= description %></td>
+           <td> <i class="fa fa-envelope respond-btn" aria-hidden="true"  > <a href=<%= `mailto:${email}` %> >send email</a> </i></td>
+           <td><i class="fa fa-trash remove-btn" aria-hidden="true" id=<%= _id %> ></i></td>
+          </tr>
+         <% })%>
+      </table>
+  </div>
+ 
